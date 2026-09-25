@@ -4,22 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Butterfly Effects</title>
-  <!-- Link to your CSS stylesheet -->
+
+  <!-- Google Fonts: Shrikhand for titles, Plus Jakarta Sans for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Shrikhand&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <!-- Optional clean Google Font matching the aesthetic -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- 1. Navigation Menu Header -->
+  <!-- Navigation Bar (Clean text, no tiny logo) -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo">
-        <!-- Replace logo.png with your actual file name -->
-        <img src="Butterfly Effects logo.png" alt="Butterfly Effects Logo" class="nav-logo-img">
-        <span>Butterfly Effects</span>
-      </a>
+      <a href="#" class="brand-title">Butterfly Effects</a>
 
       <nav>
         <ul class="nav-links">
@@ -32,17 +31,15 @@
     </div>
   </header>
 
-  <!-- 2. Hero / Welcome Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <span class="tagline-badge">Create • Connect • Impact</span>
-      <h1>Welcome to <span>Butterfly Effects</span></h1>
-      <p>Social media management, digital content creation, and creative design.</p>
-      <a href="#projects" class="btn-primary">View My Work</a>
+  <!-- Hero Banner: Logo takes center stage taking up half the space -->
+  <section class="hero-banner">
+    <div class="banner-inner">
+      <!-- Make sure your logo image file is named logo.png in the same folder -->
+      <img src="logo.png" alt="Butterfly Effects - Create, Connect, Impact" class="main-hero-logo">
     </div>
   </section>
 
-  <!-- Main Content Sections -->
+  <!-- Main Content Area -->
   <main class="page-container">
 
     <!-- About Me Section -->
@@ -54,13 +51,12 @@
           <p>I love creating social media content ideas and editing. I also have a passion for making games and websites.</p>
         </div>
         <div class="image-block">
-          <!-- Put a photo of yourself, your jewellery, or workspace here -->
-          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80" alt="Creative workspace" class="section-img">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80" alt="Creative work setup" class="section-img">
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section (No emojis) -->
     <section id="services" class="content-section">
       <div class="section-header">
         <h2>Services</h2>
@@ -69,24 +65,20 @@
 
       <div class="cards-grid">
         <div class="card">
-          <span class="card-icon">🎬</span>
           <h3>Video Editing</h3>
-          <p>Polished short and long-form video editing tailored for engagement across platforms.</p>
+          <p>Professional video editing focused on high engagement, pacing, and platform-ready formats.</p>
         </div>
         <div class="card">
-          <span class="card-icon">✨</span>
-          <h3>Asset Creation</h3>
-          <p>Steam banners, social post graphics, and promotional branding assets.</p>
+          <h3>Graphical Assets</h3>
+          <p>Eye-catching Steam graphical assets, store banners, and promotional brand collateral.</p>
         </div>
         <div class="card">
-          <span class="card-icon">📈</span>
-          <h3>Social Content & Strategy</h3>
-          <p>Content planning, scheduling, and community building strategies.</p>
+          <h3>Social Content & Plans</h3>
+          <p>Tailored social media content ideas, roadmaps, and scheduling strategies.</p>
         </div>
         <div class="card">
-          <span class="card-icon">💡</span>
-          <h3>Audits & Training</h3>
-          <p>DaVinci Resolve tutorials and website marketability analysis with actionable feedback.</p>
+          <h3>Tutorials & Marketability</h3>
+          <p>One-to-one DaVinci Resolve training and in-depth product/website marketability analysis.</p>
         </div>
       </div>
     </section>
@@ -95,33 +87,33 @@
     <section id="projects" class="content-section">
       <div class="section-header">
         <h2>Projects</h2>
-        <p>A few examples of accounts and creative work I've built and supported.</p>
+        <p>Selected accounts, video work, and consulting projects.</p>
       </div>
 
       <div class="projects-list">
         <div class="project-item">
-          <div class="project-badge">Growth</div>
-          <p>Created and ran a Uni project's social media and grew the account to <strong>75+ followers</strong> within a single month.</p>
+          <span class="project-tag">Growth</span>
+          <p>Created and ran a Uni project's social media and grew the account to 75+ followers within a single month.</p>
         </div>
         <div class="project-item">
-          <div class="project-badge">Design</div>
-          <p>Created Steam assets and promotional imagery for an indie game.</p>
+          <span class="project-tag">Assets</span>
+          <p>Created Steam assets for a game.</p>
         </div>
         <div class="project-item">
-          <div class="project-badge">Content</div>
-          <p>Produced targeted social media content and reels for a game release.</p>
+          <span class="project-tag">Content</span>
+          <p>Created social media content and reels for a game release.</p>
         </div>
         <div class="project-item">
-          <div class="project-badge">Video</div>
-          <p>Created a promotional video for a new website homepage detailing its core services.</p>
+          <span class="project-tag">Video</span>
+          <p>Created a promotional video for a new website homepage, detailing the services it provides.</p>
         </div>
         <div class="project-item">
-          <div class="project-badge">Mentorship</div>
-          <p>Provided 1-on-1 support on DaVinci Resolve alongside an in-depth reference guide.</p>
+          <span class="project-tag">Tutorial</span>
+          <p>Provided one-to-one support on how to use DaVinci Resolve alongside a detailed document guide.</p>
         </div>
         <div class="project-item">
-          <div class="project-badge">Consulting</div>
-          <p>Analysed website marketability and delivered a detailed optimization document.</p>
+          <span class="project-tag">Analysis</span>
+          <p>Analysed the marketability of a website and provided an in-depth document detailing feedback and changes.</p>
         </div>
       </div>
     </section>

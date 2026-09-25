@@ -1,15 +1,14 @@
 /* ===================================================
-   1. COLOR PALETTE & GLOBAL SETTINGS
+   1. COLOR PALETTE & TYPOGRAPHY
    =================================================== */
 :root {
-  /* Colors taken from your logo */
   --bg-white: #ffffff;
-  --bg-soft-tint: #faf7fd;       /* Very soft lilac/white for cards */
-  --primary-purple: #783be6;    /* Vibrant violet purple */
-  --primary-pink: #f7459e;      /* Bubblegum logo pink */
-  --text-dark: #23193b;         /* Deep readable navy-purple for text */
-  --text-muted: #675b7e;        /* Soft purple-gray for secondary text */
-  --border-light: #eddcf8;      /* Delicate lilac border */
+  --bg-light: #fdfafc;
+  --primary-purple: #783be6;    /* Logo purple */
+  --primary-pink: #f7459e;      /* Logo pink */
+  --text-dark: #23193b;
+  --text-muted: #675b7e;
+  --border-light: #eddcf8;
 }
 
 * {
@@ -19,18 +18,24 @@
 }
 
 html {
-  scroll-behavior: smooth;      /* Makes navbar clicks scroll smoothly */
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif, system-ui;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg-white);
   color: var(--text-dark);
   line-height: 1.6;
 }
 
+/* Headings use the Shrikhand font */
+h1, h2, h3, .brand-title, .btn-primary, .btn-nav {
+  font-family: 'Shrikhand', cursive;
+  letter-spacing: 0.5px;
+}
+
 /* ===================================================
-   2. NAVIGATION BAR
+   2. CLEAN NAVIGATION MENU
    =================================================== */
 .navbar {
   position: sticky;
@@ -44,33 +49,28 @@ body {
 .nav-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 18px 24px;
   display: flex;
-  justify-content: space-between; /* Brand on left, links on right */
+  justify-content: space-between;
   align-items: center;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.brand-title {
   text-decoration: none;
-  font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--primary-purple);
+  transition: color 0.2s ease;
 }
 
-.nav-logo-img {
-  height: 38px;
-  width: auto;
-  border-radius: 6px;
+.brand-title:hover {
+  color: var(--primary-pink);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -88,130 +88,120 @@ body {
 .btn-nav {
   background-color: var(--primary-pink);
   color: #fff !important;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: 999px;
-  transition: opacity 0.2s;
+  font-size: 0.95rem;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-nav:hover {
-  opacity: 0.9;
-}
-
-/* ===================================================
-   3. HERO SECTION (TEXT POSITIONING & HIGHLIGHTS)
-   =================================================== */
-.hero-section {
-  text-align: center; /* Center align hero text */
-  padding: 80px 20px 60px;
-  background: radial-gradient(circle at 50% 20%, #fbe9f5 0%, #ffffff 70%);
-}
-
-.tagline-badge {
-  display: inline-block;
-  background: #f4ecfd;
-  color: var(--primary-purple);
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.hero-section h1 {
-  font-size: 2.8rem;
-  color: var(--text-dark);
-  margin-bottom: 16px;
-}
-
-.hero-section h1 span {
-  color: var(--primary-pink);
-}
-
-.hero-section p {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  max-width: 550px;
-  margin: 0 auto 28px;
-}
-
-.btn-primary {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  box-shadow: 0 4px 14px rgba(247, 69, 158, 0.3);
-  transition: transform 0.2s;
-}
-
-.btn-primary:hover {
+  background-color: var(--primary-purple);
   transform: translateY(-2px);
 }
 
 /* ===================================================
-   4. CONTENT LAYOUTS & DEFINED SECTIONS
+   3. HERO BANNER (HALF-PAGE LOGO SHOWCASE)
+   =================================================== */
+.hero-banner {
+  min-height: 52vh; /* Takes up approximately half of the viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #fbebf7 0%, #ffffff 80%);
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.banner-inner {
+  text-align: center;
+  width: 100%;
+  max-width: 780px; /* Constrains the logo nicely */
+}
+
+.main-hero-logo {
+  width: 100%;
+  max-height: 44vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 20px rgba(120, 59, 230, 0.08));
+}
+
+/* ===================================================
+   4. SECTIONS & LAYOUT
    =================================================== */
 .page-container {
-  max-width: 1080px;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 20px 24px 80px;
 }
 
 .content-section {
   margin-top: 60px;
-  padding-top: 40px;
+  padding-top: 50px;
   border-top: 1px solid var(--border-light);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: var(--primary-purple);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .section-header p {
   color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
-/* Two-column layout for About Me (Text left, Image right) */
+/* Two-column layout for About Me */
 .two-column-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
   align-items: center;
+}
+
+.text-block h2 {
+  margin-bottom: 16px;
+}
+
+.text-block p {
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.text-block strong {
+  color: var(--primary-pink);
 }
 
 .section-img {
   width: 100%;
-  max-height: 340px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(120, 59, 230, 0.1);
-  border: 3px solid #fff;
+  border-radius: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 30px rgba(120, 59, 230, 0.12);
 }
 
 /* Services Grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
 }
 
 .card {
-  background: var(--bg-soft-tint);
-  border: 1px solid var(--border-light);
-  padding: 24px;
-  border-radius: 14px;
-  transition: transform 0.2s, border-color 0.2s;
+  background: var(--bg-light);
+  border: 1.5px solid var(--border-light);
+  padding: 28px 22px;
+  border-radius: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
@@ -219,50 +209,52 @@ h2 {
   border-color: var(--primary-pink);
 }
 
-.card-icon {
-  font-size: 1.8rem;
-  display: block;
+.card h3 {
+  font-size: 1.25rem;
+  color: var(--primary-purple);
   margin-bottom: 12px;
 }
 
-.card h3 {
-  font-size: 1.15rem;
-  color: var(--primary-purple);
-  margin-bottom: 8px;
-}
-
 .card p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
 }
 
-/* Projects Stack */
+/* Projects Grid */
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 18px;
 }
 
 .project-item {
   background: #fff;
-  border: 1px solid var(--border-light);
-  padding: 18px 20px;
-  border-radius: 12px;
+  border: 1.5px solid var(--border-light);
+  padding: 20px;
+  border-radius: 14px;
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 16px;
+  transition: border-color 0.2s;
 }
 
-.project-badge {
-  background: #fbf0f7;
+.project-item:hover {
+  border-color: var(--primary-purple);
+}
+
+.project-tag {
+  font-family: 'Shrikhand', cursive;
+  background: #fdf0f7;
   color: var(--primary-pink);
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 8px;
   flex-shrink: 0;
+}
+
+.project-item p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
 }
 
 /* ===================================================
@@ -270,25 +262,21 @@ h2 {
    =================================================== */
 .footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px 20px;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   border-top: 1px solid var(--border-light);
 }
 
-/* ===================================================
-   6. RESPONSIVENESS (MOBILE DEVICES)
-   =================================================== */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Can be expanded to mobile toggle hamburger later */
+    display: none;
   }
-  
   .two-column-layout {
-    grid-template-columns: 1fr; /* Stacks image under text on phones */
+    grid-template-columns: 1fr;
   }
-
-  .hero-section h1 {
-    font-size: 2.1rem;
+  .hero-banner {
+    min-height: 40vh;
   }
 }
