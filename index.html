@@ -1,43 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butterfly Effects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly Effects</title>
+  <!-- Link to your CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Optional clean Google Font matching the aesthetic -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <h1>Butterfly Effects</h1>
-    </header>
+  <!-- 1. Navigation Menu Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <!-- Replace logo.png with your actual file name -->
+        <img src="Butterfly Effects logo.png" alt="Butterfly Effects Logo" class="nav-logo-img">
+        <span>Butterfly Effects</span>
+      </a>
 
-    <main>
-        <p>Welcome to Butterfly Effects.</p>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="btn-nav">Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <section>
-            <header>About me</header>
-            <p>I have started my journey in social media and managing social media accounts since 2023. I have created 2 personal accounts for my jewellery business and for my colourings. I built up a combined total of 2,600 followers for both accounts since working on them for over a year. I love creating social media content ideas and editing. I also have a passion for making games and websites.</p>
-        </section>
+  <!-- 2. Hero / Welcome Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <span class="tagline-badge">Create • Connect • Impact</span>
+      <h1>Welcome to <span>Butterfly Effects</span></h1>
+      <p>Social media management, digital content creation, and creative design.</p>
+      <a href="#projects" class="btn-primary">View My Work</a>
+    </div>
+  </section>
 
-        <section>
-            <header>Services</header>
-            <p>Butterfly Effects can provide a range of services for you and your company. These services range from video editing to creating graphical assests to social media content and plans being provided. Tutorial help and anaylsis on the marketability of products can also be provided too.</p>
-        </section>
+  <!-- Main Content Sections -->
+  <main class="page-container">
 
-        <section>
-            <header>Projects</header>
-            <ul>
-            <li>Created and ran a Uni projects social media and growed the account to 75+ followers within a month.</li>
-            <li>Created steam assets for a game.</li>
-            <li>Created social media content for a game.</li>
-            <li>Created a promotional video for a new website to be on the home page, detailing the services it provides.</li>
-            <li>Provided one to one support on how to use Davinci Resolve alongside a detailed document guide.</li>
-            <li>Anaylsed the marketability of a website and provided an in depth document detailing this alongside feedback to make changes.</li>
+    <!-- About Me Section -->
+    <section id="about" class="content-section">
+      <div class="two-column-layout">
+        <div class="text-block">
+          <h2>About Me</h2>
+          <p>I have started my journey in social media and managing social media accounts since 2023. I have created 2 personal accounts for my jewellery business and for my colourings. I built up a combined total of <strong>2,600 followers</strong> for both accounts since working on them for over a year.</p>
+          <p>I love creating social media content ideas and editing. I also have a passion for making games and websites.</p>
+        </div>
+        <div class="image-block">
+          <!-- Put a photo of yourself, your jewellery, or workspace here -->
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80" alt="Creative workspace" class="section-img">
+        </div>
+      </div>
+    </section>
 
+    <!-- Services Section -->
+    <section id="services" class="content-section">
+      <div class="section-header">
+        <h2>Services</h2>
+        <p>Butterfly Effects can provide a range of services for you and your company.</p>
+      </div>
 
-            </ul>
-        </section>
-    </main>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">🎬</span>
+          <h3>Video Editing</h3>
+          <p>Polished short and long-form video editing tailored for engagement across platforms.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">✨</span>
+          <h3>Asset Creation</h3>
+          <p>Steam banners, social post graphics, and promotional branding assets.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📈</span>
+          <h3>Social Content & Strategy</h3>
+          <p>Content planning, scheduling, and community building strategies.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💡</span>
+          <h3>Audits & Training</h3>
+          <p>DaVinci Resolve tutorials and website marketability analysis with actionable feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="content-section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p>A few examples of accounts and creative work I've built and supported.</p>
+      </div>
+
+      <div class="projects-list">
+        <div class="project-item">
+          <div class="project-badge">Growth</div>
+          <p>Created and ran a Uni project's social media and grew the account to <strong>75+ followers</strong> within a single month.</p>
+        </div>
+        <div class="project-item">
+          <div class="project-badge">Design</div>
+          <p>Created Steam assets and promotional imagery for an indie game.</p>
+        </div>
+        <div class="project-item">
+          <div class="project-badge">Content</div>
+          <p>Produced targeted social media content and reels for a game release.</p>
+        </div>
+        <div class="project-item">
+          <div class="project-badge">Video</div>
+          <p>Created a promotional video for a new website homepage detailing its core services.</p>
+        </div>
+        <div class="project-item">
+          <div class="project-badge">Mentorship</div>
+          <p>Provided 1-on-1 support on DaVinci Resolve alongside an in-depth reference guide.</p>
+        </div>
+        <div class="project-item">
+          <div class="project-badge">Consulting</div>
+          <p>Analysed website marketability and delivered a detailed optimization document.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <p>© 2026 Butterfly Effects. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>

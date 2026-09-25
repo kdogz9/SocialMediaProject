@@ -1,0 +1,294 @@
+/* ===================================================
+   1. COLOR PALETTE & GLOBAL SETTINGS
+   =================================================== */
+:root {
+  /* Colors taken from your logo */
+  --bg-white: #ffffff;
+  --bg-soft-tint: #faf7fd;       /* Very soft lilac/white for cards */
+  --primary-purple: #783be6;    /* Vibrant violet purple */
+  --primary-pink: #f7459e;      /* Bubblegum logo pink */
+  --text-dark: #23193b;         /* Deep readable navy-purple for text */
+  --text-muted: #675b7e;        /* Soft purple-gray for secondary text */
+  --border-light: #eddcf8;      /* Delicate lilac border */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;      /* Makes navbar clicks scroll smoothly */
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif, system-ui;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ===================================================
+   2. NAVIGATION BAR
+   =================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between; /* Brand on left, links on right */
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--primary-purple);
+}
+
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-pink);
+}
+
+.btn-nav {
+  background-color: var(--primary-pink);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: opacity 0.2s;
+}
+
+.btn-nav:hover {
+  opacity: 0.9;
+}
+
+/* ===================================================
+   3. HERO SECTION (TEXT POSITIONING & HIGHLIGHTS)
+   =================================================== */
+.hero-section {
+  text-align: center; /* Center align hero text */
+  padding: 80px 20px 60px;
+  background: radial-gradient(circle at 50% 20%, #fbe9f5 0%, #ffffff 70%);
+}
+
+.tagline-badge {
+  display: inline-block;
+  background: #f4ecfd;
+  color: var(--primary-purple);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.hero-section h1 span {
+  color: var(--primary-pink);
+}
+
+.hero-section p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin: 0 auto 28px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(247, 69, 158, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   4. CONTENT LAYOUTS & DEFINED SECTIONS
+   =================================================== */
+.page-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.content-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-light);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-purple);
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+/* Two-column layout for About Me (Text left, Image right) */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.section-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(120, 59, 230, 0.1);
+  border: 3px solid #fff;
+}
+
+/* Services Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-soft-tint);
+  border: 1px solid var(--border-light);
+  padding: 24px;
+  border-radius: 14px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-pink);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--primary-purple);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Projects Stack */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.project-item {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  padding: 18px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.project-badge {
+  background: #fbf0f7;
+  color: var(--primary-pink);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   5. FOOTER
+   =================================================== */
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* ===================================================
+   6. RESPONSIVENESS (MOBILE DEVICES)
+   =================================================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Can be expanded to mobile toggle hamburger later */
+  }
+  
+  .two-column-layout {
+    grid-template-columns: 1fr; /* Stacks image under text on phones */
+  }
+
+  .hero-section h1 {
+    font-size: 2.1rem;
+  }
+}
