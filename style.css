@@ -104,32 +104,32 @@ h1, h2, h3, .brand-title, .btn-primary, .btn-nav {
    =================================================== */
 .hero-banner {
   width: 100%;
-  height: 50vh;             /* Takes up exactly half the screen height */
-  min-height: 340px;        /* Prevents it getting too thin on mobile */
-  max-height: 480px;        /* Keeps it from becoming excessively tall on ultra-wide screens */
-  overflow: hidden;         /* Cuts off the excess top and bottom white canvas */
+  height: 38vh;             /* Reduced from 50vh so it doesn't dominate the screen */
+  min-height: 250px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-  border-bottom: 2px solid var(--border-light);
+  border-bottom: 2px solid #eddcf8;
 }
 
 .main-hero-logo {
   width: 100%;
-  height: 100%;
-  /* Zooms in and crops out the empty vertical borders, centering the oval logo */
-  object-fit: cover;
-  object-position: center;
+  max-width: 650px;         /* Caps the maximum size on desktop */
+  height: auto;
   display: block;
+  transform: scale(1.35);   /* Reduced scale (was 1.7) so it fits nicely without overflowing */
+  transform-origin: center center;
 }
 
-/* On phones, show the entire logo shape without aggressive cropping */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-banner {
-    height: auto;
-    min-height: 220px;
-    padding: 20px 10px;
+    height: 28vh;
+    min-height: 180px;
+  }
+  .main-hero-logo {
+    transform: scale(1.15);
   }
 
   .main-hero-logo {
