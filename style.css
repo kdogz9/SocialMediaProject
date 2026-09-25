@@ -199,72 +199,131 @@ h2 {
   box-shadow: 0 10px 30px rgba(120, 59, 230, 0.12);
 }
 
-/* Services Grid */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 22px;
+/* ===================================================
+   SERVICES: 4 BIG ALTERNATING COLOR BOXES IN A ROW
+   =================================================== */
+
+.services-full-section {
+  width: 100%;
+  max-width: 1200px; /* Wider container so 4 large boxes breathe easily */
+  margin: 70px auto 40px;
+  padding: 0 20px;
 }
 
-.card {
-  background: var(--bg-light);
-  border: 1.5px solid var(--border-light);
-  padding: 28px 22px;
-  border-radius: 16px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+.services-header-wrap {
+  text-align: center;
+  margin-bottom: 36px;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary-pink);
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  color: var(--primary-purple);
-  margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 0.92rem;
-  color: var(--text-muted);
-}
-
-/* Projects Grid */
-.projects-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 18px;
-}
-
-.project-item {
-  background: #fff;
-  border: 1.5px solid var(--border-light);
-  padding: 20px;
-  border-radius: 14px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: border-color 0.2s;
-}
-
-.project-item:hover {
-  border-color: var(--primary-purple);
-}
-
-.project-tag {
+.services-header-wrap h2 {
   font-family: 'Shrikhand', cursive;
-  background: #fdf0f7;
-  color: var(--primary-pink);
-  font-size: 0.8rem;
-  padding: 5px 12px;
-  border-radius: 8px;
-  flex-shrink: 0;
+  font-size: 2.6rem;
+  color: var(--primary-purple);
+  margin-bottom: 8px;
 }
 
-.project-item p {
+.services-header-wrap p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* 4 columns side-by-side in an exact row */
+.services-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Base large card styling */
+.service-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Text sits elegantly towards bottom/middle */
+  min-height: 380px;         /* Gives that big, tall, square card presence */
+  padding: 32px 24px;
+  border-radius: 20px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Lift on hover */
+.service-box:hover {
+  transform: translateY(-8px);
+}
+
+/* Alternating Purple Card */
+.box-purple {
+  background-color: var(--primary-purple);
+  box-shadow: 0 12px 30px rgba(120, 59, 230, 0.25);
+}
+
+.box-purple:hover {
+  box-shadow: 0 20px 40px rgba(120, 59, 230, 0.35);
+}
+
+/* Alternating Pink Card */
+.box-pink {
+  background-color: var(--primary-pink);
+  box-shadow: 0 12px 30px rgba(247, 69, 158, 0.25);
+}
+
+.box-pink:hover {
+  box-shadow: 0 20px 40px rgba(247, 69, 158, 0.35);
+}
+
+/* Subtle corner step number */
+.box-number {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-family: 'Shrikhand', cursive;
+  font-size: 1.8rem;
+  opacity: 0.35;
+  color: #ffffff;
+}
+
+/* Typography inside the colored boxes */
+.service-box h3 {
+  font-family: 'Shrikhand', cursive;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.service-box p {
   font-size: 0.95rem;
-  color: var(--text-dark);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===================================================
+   RESPONSIVENESS (TABLETS & MOBILE)
+   =================================================== */
+
+/* On tablets/smaller laptops: switch to 2x2 grid */
+@media (max-width: 992px) {
+  .services-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .service-box {
+    min-height: 300px;
+  }
+}
+
+/* On phones: single column stack so it remains readable */
+@media (max-width: 580px) {
+  .services-row {
+    grid-template-columns: 1fr;
+  }
+  .service-box {
+    min-height: 240px;
+    padding: 24px 20px;
+  }
 }
 
 /* ===================================================
@@ -278,15 +337,3 @@ h2 {
   border-top: 1px solid var(--border-light);
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .two-column-layout {
-    grid-template-columns: 1fr;
-  }
-  .hero-banner {
-    min-height: 40vh;
-  }
-}
